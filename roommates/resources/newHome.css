@@ -1,0 +1,45 @@
+.subtitle{
+	position: absolute;
+	margin: auto;
+	color: #1B4965;
+	top: 40px;
+	padding: 5px;
+	padding-right:70px;
+	padding-left:70px;
+	text-align: center;
+	width: 375px;
+	border-bottom: 2px solid rgba(27, 72, 101, 0.68);
+    margin-bottom: 30px;
+    margin-top: 120px;
+}
+
+form {
+	position: absolute;
+	margin-top: 120px;
+	margin-left: 15px;
+}
+
+form input[type=submit]{
+	position: absolute;
+	margin-left: 100px;
+}
+#logoStamp {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 16%;
+	left: 48%;
+	width: 60px;
+	height: auto;
+	z-index: 99997;
+}
+
+#newJoinHomeRight{
+	float: right;
+	width: 30%
+}
+
+#noWorriesBouThisErrorGettinInDaWay {
+	position: absolute;
+}

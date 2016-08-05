@@ -1,0 +1,21 @@
+<link href="resources/sticky.css" rel="stylesheet" type="text/css"/>
+
+<datalist id="days">
+	{% for i in range(0,31) %}
+		<option value={{i}}>
+	{% endfor %}
+</datalist>
+
+<h1 id="stickyTitle">Create a Chore<h1>
+
+<div id="createForm">	
+	<form action="" method="post">
+   		<h6>Chore Name: <input id="boxTooShort" type="text" name="chore_name" required/></h6>
+    	<h6>Assign To:</h6>
+    	{% for p in rotation_list %}
+			<h6><input type=checkbox name={{p.user_id}}> {{p.name}}<br></h6>
+		{% endfor %}
+    	<h6>How often do you want this chore to rotate? <br><br> Every <input list = "days" name = "days" required> Days <br></h6>
+    	<input type="submit" value="Click to create a chore"/>
+	</form>
+</div>

@@ -1,0 +1,121 @@
+<div>
+		<h1 id="dash_title">{{ person.name }}'s Dashboard</h1>
+		<div class="main_left">
+			<div id="do_not_disturb_frame">
+						<h3 id="do_not_disturb_title">DO NOT DISTURB</h3>
+						{% if has_dnd_on: %}
+							<div class="name_box">
+								{% for p in has_dnd_on: %}
+									<div class="do_not_disturb_item animated zoomIn">{{p.name}}</div>
+								{% endfor %}
+							</div>
+						{% else %}
+							<div class="do_not_disturb_item">No One</div>
+						{% endif %}
+			
+			</div>
+			<div id="whos_in_the_room_frame">
+						<h3 id="whos_in_the_room_title">Who's currently in the room: {{room_name}}</h3>
+						{% if checked_in %}
+							{% for p in checked_in: %}
+								<div class="whos_in_the_room_item">{{ p.name }}</div>
+							{% endfor %}
+						{% else %}
+							<div class="whos_in_the_room_item">No One</div>
+						{% endif %}
+			</div>
+			<div id="sticky_frame">
+						<h3 id="sticky_title">Stickies</h3>
+						{% if home_stickies: %}
+							<div class="name_box">
+							{% for sticky in home_stickies: %}
+								<div class="dropdown">
+									{% if sticky.completed == True %} 
+									<div class="worker_item">{{sticky.author}}</div>
+									<div class="chore_completed_item">
+									{% else %}
+									<div class="worker_item">{{sticky.author}}</div>
+									<div class="chore_item">
+									{% endif %}
+									{{sticky.title}} : {{sticky.content}} 
+									<br>Created on: {{sticky.time_created}}</div>
+									<div class="dropdown_content">
+										<form action="/complete_sticky" method="post">
+											<input hidden name='sticky_title' value="{{ sticky.title }}">
+											<input hidden name='sticky_content' value="{{ sticky.content }}">
+											<input type="submit" value="Toggle Completed">
+										</form>
+										{% if sticky.author == person.user_id %}
+										<form action="/delete_sticky" method="post">
+											<input hidden name='sticky_title' value="{{ sticky.title }}">
+											<input hidden name='sticky_content' value="{{ sticky.content }}">
+											<input type="submit" value="Delete Sticky">
+										</form>
+										{% endif %}
+									</div>
+								</div>
+								<div style="width:100%; height: 2px; float: left">  &nbsp </div>
+							{% endfor %}
+							</div>
+						{% else %}
+								<div class="worker_item">No Stickies</div>
+						{% endif %}
+			</div>
+		</div>
+		<div class="main_right">
+			<div id="chore_frame">
+						<h3 id="chore_title">Chores</h3>
+						{% if chores: %}
+							<div class="name_box">
+								{% for chore in chores: %}
+									
+									{% if chore.workers_names[chore.index] == person.name %}
+									<div class="dropdown">
+									{% endif %}
+									{% if chore.completed == True %}
+									<div class="chore_completed_item">{{chore.chore_name}}</div>
+									<div class="worker_completed_item">{{chore.workers_names[chore.index]}}</div>
+									{% else %}
+									<div class="chore_item">{{chore.chore_name}}</div>
+									<div class="worker_item">{{chore.workers_names[chore.index]}}</div>
+									{% endif %}
+									<div class="dropdown_content">
+										{% if chore.workers[chore.index] == person.user_id %}
+										<form action="/complete_chore" method="post">
+											<input hidden name='chore_name' value="{{ chore.chore_name }}">
+											<input hidden name='chore_end_time' value="{{ chore.end_time }}">
+											<input type="submit" value="Mark as Completed">
+										</form>
+										{% endif %}
+									</div>
+									{% if chore.workers_names[chore.index] == person.name %}
+									</div>
+									{% endif %}
+								{% endfor %}
+							</div>
+						{% else %}
+							<div class="worker_item">No Chores</div>
+						{% endif %}
+			
+			</div>
+			<div id="bill_frame">
+						<h3 id="bill_title">Bills</h3>
+						{% if bills: %}
+							<div class="name_box">
+								{% for bill in bills: %}
+									<div class="chore_item">{{bill.bill_name}}</div>
+									<div class="worker_item">{{bill.payer_name}}</div>
+								{% endfor %}
+							</div>
+						{% else %}
+							<div class="worker_item">No Bills</div>
+						{% endif %}
+			
+			</div>
+
+			<div id="cal_frame">
+				<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src={{ calID }}&amp;color=%2329527A&amp;ctz=America%2FChicago" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		</div>
+</div>
+
+	

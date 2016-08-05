@@ -1,0 +1,59 @@
+#stickyTitle {
+	position: relative;
+	color: #1B4965;
+	top: 40px;
+	left: 30px;
+	padding: 5px;
+	padding-right:70px;
+	padding-left:70px;
+	text-align: center;
+	width: 20%;
+	display: inline;
+	border-bottom: 2px solid rgba(27, 72, 101, 0.68);
+    margin-bottom: 30px;
+}
+
+#boxTooShort {
+	width: 324px;
+}
+
+#createForm {
+	position: relative;
+	top: 40px;
+}
+
+form * {
+	position: relative;
+	left:5px;
+}
+
+form h6 {
+	color: #1B4965;
+}
+
+form input[type=text] {
+	background: transparent;
+    border: none;
+    border-bottom: 2px dashed #576490;
+    width: 275px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
+    font-size: 20px;
+    color: #1B4965;
+}
+
+form input[type=submit] {
+	position: relative;
+	left: 134.0095px;
+	background-color: #BEE9E8;
+    border: 2px solid #1B4965;
+    padding: 8px 10px 8px 10px;
+    border-radius: 10px;
+    color: #1B4965;
+    font-size: 20px;
+}
+
+form input[type=submit]:hover{
+	background-color: rgba(27, 72, 101, 0.3);
+}

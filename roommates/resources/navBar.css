@@ -1,0 +1,82 @@
+#title{
+	position: fixed;
+	top: .5%;
+	left: 5.7%;
+	font-size: 50px;
+	color: #CAE9FF;
+	text-align: left;
+	font-style: bold;
+	width: 475px;
+	padding-right: 5px;
+	margin: auto;
+	z-index: 99999;	
+}
+
+#title a{
+	text-decoration: none;
+	color: #CAE9FF;
+}
+
+#navPic{
+	position: fixed;
+	top: .7%;
+	left: .9%;
+	width: 4.2%;
+	height: auto;
+	display: block;
+	margin: auto;
+	cursor: pointer;
+    transition: 0.3s;
+    z-index: 99998;
+}
+#navBar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 3%;
+	left: 35%;
+	width: 65%;
+	height: 45px;
+	z-index: 99997;
+}
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 70px;
+	width: 100%;
+	background-color: #1B4965;
+	z-index: 99990;
+}
+
+li a img{
+	height: 30px;
+	width: 30px;
+	margin-top: -5px;
+}
+
+#gearLink {
+	height: 30px;
+	width: 30px;
+}
+
+li a{
+	display: block;
+	color: #CAE9FF;
+	font-size: 13px;
+	width: 100px;
+	padding: 8px 16px;
+	padding-bottom: 15px;
+	text-decoration: none;
+	text-align: center;
+	float: right;
+	border-bottom: 5px hidden;
+	z-index: 99996;	
+}
+li a:hover{
+	border-bottom: 5px solid #4A8FE7;
+	text-decoration: none;
+	color: white;
+}

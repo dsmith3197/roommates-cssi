@@ -1,0 +1,60 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="resources/main.css" type="text/css">
+<link rel="stylesheet" href="resources/newHome.css" type="text/css">
+
+<div>
+	<h3 id="noWorriesBouThisErrorGettinInDaWay">{{ error }}</h3>
+	<img id="logoStamp" src="resources/loginPic.png"/>
+	<h1 class="centered_title">Welcome To Roomates</h1>
+	<div>
+		<div class="main_left">
+			<h2 class="subtitle" class="centered_title">Already have a Room to Join? Join Here!</h2>	
+			<form action="/join_home" method="post">
+				<h5 class="type">Your Name: <input type="text" class="text_boxes" name="name" required/></h5>
+	    		<h5 class="type">Phone Number: ( 
+	    			<input type="text" class="text_boxes" name="phone_number1" minlength="3" maxlength="3" size="3" required/> ) 
+	    			<input type="text" class="text_boxes" name="phone_number2" minlength="3" maxlength="3" size="3" required/> - 
+	    			<input type="text" class="text_boxes" name="phone_number3" minlength="4" maxlength="4" size="4" required/>
+	    		</h5>
+	    		<h5 class="type">Color: 
+	    		<select name="color" required="">
+  					<option value="red">Red</option>
+  					<option value="green">Green</option>
+ 					<option value="blue">Blue</option>
+  					<option value="purple">Purple</option>
+  					<option value="yellow">Yellow</option>
+  					<option value="brown">Brown</option>
+				</select>
+	    		<h5 class="type">Home Name: <input type="text" class="text_boxes" name="home_name" required/></h5>
+	    		<h5 class="type">Password: <input type="password" class="text_boxes" name="password" required/></h5>
+	    		<input type="submit" value="Join This Room"/>
+	    	</form>
+		</div>
+
+
+		<div class="main_right">
+			<h2 id="newJoinHomeRight" class="subtitle" class="centered_title">Need to Create a Room? <br />Do it Here!</h2>
+			<form action="/create_home" method="post">
+	    		<h5 class="type">Your Name: <input type="text" class="text_boxes" name="name_b" required/></h5>
+	    		<h5 class="type">Phone Number: ( 
+	    			<input type="text" class="text_boxes" name="phone_number1_b" minlength="3" maxlength="3" size="3" required/> ) 
+	    			<input type="text" class="text_boxes" name="phone_number2_b" minlength="3" maxlength="3" size="3" required/> - 
+	    			<input type="text" class="text_boxes" name="phone_number3_b" minlength="3" maxlength="4" size="4" required/>
+	    		</h5>
+	    		<h5 class="type">Color: 
+	    		<select name="color" required="">
+  					<option value="red">Red</option>
+  					<option value="green">Green</option>
+ 					<option value="blue">Blue</option>
+  					<option value="purple">Purple</option>
+  					<option value="yellow">Yellow</option>
+  					<option value="brown">Brown</option>
+				</select>
+	    		<h5 class="type">Home Name: <input type="text" class="text_boxes" name="home_name_b" required/></h5>
+	    		<h5 class="type">Make a Password: <input type="password" class="text_boxes" name="password_a" required/></h5>
+	    		<h5 class="type">Confirm Password: <input type="password" class="text_boxes" name="password_b" required/></h5>
+	    		<input type="submit" value="Make New Room"/>
+	    	</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<link href="resources/sticky.css" rel="stylesheet" type="text/css"/>
+
+<datalist id="days">
+	{% for i in range(0,31) %}
+		<option value={{i}}>
+	{% endfor %}
+</datalist>
+<datalist id="hours">
+	{% for i in range(0,25) %}
+		<option value={{i}}>
+	{% endfor %}
+</datalist>
+
+
+<h1 id="stickyTitle">Create a Sticky<h1>
+
+<div id="createForm">	
+	<form action="/create_sticky" method="post">
+   		<h6>Title: <input id="boxTooShort" type="text" name="title" required/></h6>
+    	<h6>Message: <input type="text" name="content" required/></h6>
+    	<h6>Important? <input type="checkbox" name="important"/></h6>
+    	<h6>How long do you want this sticky to last? <br /><br /> <input list = "days" name = "days" required> Days <br /><br /><input list = "hours" name = "hours" required> Hours</h6>
+    	<input type="submit" value="Click to Create Sticky"/>
+	</form>
+</div>
